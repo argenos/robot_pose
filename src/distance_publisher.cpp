@@ -19,7 +19,7 @@ public:
   {
     distance_travelled_ = 0.0;
     distance_pub_ = nh_.advertise<std_msgs::Float64>("distance_travelled", 1, true);
-    pose_sub_ = nh_.subscribe("/mobile_base_controller/odom", 1000, &DistanceTravelledPublisher::poseCb, this);
+    pose_sub_ = nh_.subscribe("mobile_base_controller/odom", 1000, &DistanceTravelledPublisher::poseCb, this);
     statistics_timer_ = nh_.createTimer(
         ros::Duration(1.0), boost::bind(&DistanceTravelledPublisher::doPublish, this));
     REGISTER_VARIABLE(DEFAULT_STATISTICS_TOPIC, "pal.distance_travelled",

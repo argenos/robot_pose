@@ -15,7 +15,7 @@ namespace pal
 TEST(DistanceTravelled, test)
 {
   ros::NodeHandle nh;
-  ros::Publisher pub = nh.advertise<nav_msgs::Odometry>("/mobile_base_controller/odom", 1);
+  ros::Publisher pub = nh.advertise<nav_msgs::Odometry>("mobile_base_controller/odom", 1);
   ros::Duration(0.5).sleep();  // Allow subscribers to connect
   nav_msgs::Odometry msg;
   msg.pose.pose.orientation.w = 1.0;
