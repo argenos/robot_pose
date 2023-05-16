@@ -12,5 +12,8 @@
     <param name="prefix" type="string" value="$(arg robot_prefix)" />
     <param name="transform_timeout" type="double" value="$(arg transform_timeout)" />
   </node>
+
+  <node pkg="robot_pose" type="distance_publisher_node" name="distance_publisher" output="screen">
+  </node>
 </launch>
 
